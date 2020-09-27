@@ -1,0 +1,116 @@
+<html>
+	<head>
+			<title>add place</title>
+			<style>
+				.tabs{
+					widhth:100%;
+				}
+				.tabs button{
+					background-color:white;
+				}
+				.tabs button.active{
+					background-color:blue;
+				}
+				.tabs button:hover{
+					background-color:red;
+				}
+				
+				.tabcontent{
+					display:none;
+					height:500px;
+					width:30%;
+					border:1px solid black;
+				}
+				
+			</style>
+	</head>
+	<body>
+			<div class="tabs"> 
+				<button class="tablinks" id="property_info" onclick="tab_content(event,'property_info_content')">property information</button>
+				<button class="tablinks" id="availability" onclick="tab_content(event,'availability_content')">property information</button>
+				<button class="tablinks" id="meeting schedule" onclick="tab_content(event,'meeting_schedule_content')">property information</button>
+				<button class="tablinks" id="rent" onclick="tab_content(event,'rent_content')">property information</button>
+			</div>
+			<form name="addplace" method="post">
+				<div class="tabcontent" id="property_info_content">
+					select type<select name="property_type">
+					<option value="blank"></option>
+					<option value="ap">Apartment/Flat</option>
+					<option value="bung">Bunglow/Villa</option>
+					<option value="gbung">Gated bunglow/villa</option>
+					</select><br>
+					BHK<select name="num_of_rooms">
+					<option value="blank"></option>
+					<option value="1r">Single Room</option>
+					<option value="1rk">1RK</option>
+					<option value="1bhk">1BHK</option>
+					<option value="2bhk">2BHK</option>
+					<option value="3bhk">3BHK</option>
+					<option value="4bhk">4BHK</option>
+					<option value="m4bhk">4BHK+</option>
+					</select><br>
+					number of floor <input type="number" id="num_of_floor" value="0" min="0"/>
+					out of <input type="number" id="num_of_floor" value="0" min="0"/><br>
+					age of property in years<input type="number" id="age_year" value="0" min="0"/>
+					<input type="number" id="age_month" value="0" min="1" max="12"/><br>
+					facing direction<select name="property_type">
+					<option value="north">north</option>
+					<option value="east">east</option>
+					<option value="south">south</option>
+					<option value="west">west</option>
+					</select><br>
+					size in sqr feet<input type="number" name="property_size">
+				</div>
+				<div class="tabcontent" id="availability_content">
+					<h4>in property area</h4><br>
+					number of bathrooms available<input type="number" min="0" max="" /><br>
+					gym <input type="radio" name="gym" value="yes" /><span class="gymstatus">Yes</span>
+					<input type="radio" name="gym" value="no" /><span class="gymstatus">No</span><br>
+					water supply<select name="water_supply">
+					<option value="not available">not available</option>
+					<option value="drinking-limited"> drinking(limited)</option>
+					<option value="non drinking only">non drinking only</option>
+					<option value="both available">both available</option>
+					</select>
+					<select name="watertime">
+					<option value="limited_hours">limited hours</option>	
+					<option value="all_time">all time</option>
+					</select><br>
+					gated security <input type="radio" name="gated_security" value="yes" /><span class="security">Yes</span>
+					<input type="radio" name="gated_security" value="no" /><span class="security">No</span><br>
+					parking<select name="parking">
+					<option value="not available">not available</option>
+					<option value="bike only">bike only</option>
+					<option value="car only">car only</option>
+					<option value="both available">both available</option>
+					</select><br>
+					swimming pool available<input type="radio" name="swimming_pool" value="yes" /><span class="swimming">Yes</span>
+					<input type="radio" name="swimming_pool" value="no" /><span class="swimming">No</span><br>
+					play ground available<input type="radio" name="play_ground" value="yes" /><span class="playground">Yes</span>
+					<input type="radio" name="play_ground" value="no" /><span class="playground">No</span><br>
+				</div>
+				<div class="tabcontent" id="meeting_schedule_content">
+				sdfghjhgfghjk
+				</div>
+				<div class="tabcontent" id="rent_content">
+				dfghhgfdfgh
+				</div>
+			</from>
+			<script language="javascript" type="text/javascript">
+				function tab_content(evt, content){
+					
+					var i, tabcontent, tablinks;
+					tabcontent = document.getElementsByClassName("tabcontent");
+					for (i = 0; i < tabcontent.length; i++) {
+					tabcontent[i].style.display = "none";
+					}
+					tablinks = document.getElementsByClassName("tablinks");
+					for (i = 0; i < tablinks.length; i++) {
+					tablinks[i].className = tablinks[i].className.replace(" active", "");
+					}
+					document.getElementById(content).style.display = "block";
+					evt.currentTarget.className += " active";
+				}
+			</script>
+	</body>
+</html>

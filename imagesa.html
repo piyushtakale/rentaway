@@ -1,0 +1,22 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+	 <meta charset="UTF-8"></head>
+	<body>
+	<form name="isample" action="imgproo.php" enctype="multipard/form-data" method="post" onsubmit="validateImage()">
+	<input type="file" name="imgupload" id="imgupload">
+	<input type="submit" name="insert" id="insert" value="insert">
+	</form>
+	<script language="javascript" type="text/javascript">
+		function validateImage(){
+			var image = document.getElementById("imgupload").value;
+			if(image==''){
+				alert("please select image first");
+				return true;
+			}
+		}
+	</script>
+	</body>
+	
+</html>
